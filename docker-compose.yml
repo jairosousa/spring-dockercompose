@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  db:
+    image: mysql
+    ports:
+      - '3306:3306'
+    restart: always
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_DATABASE: product_db
+      MYSQL_USER: springuser
+      MYSQL_PASSWORD: admin123
+volumes:
+  mysql-data:
+    driver: local
